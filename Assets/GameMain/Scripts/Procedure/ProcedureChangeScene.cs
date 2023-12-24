@@ -7,6 +7,7 @@
 
 using GameFramework.DataTable;
 using GameFramework.Event;
+using UnityEngine;
 using UnityGameFramework.Runtime;
 using ProcedureOwner = GameFramework.Fsm.IFsm<GameFramework.Procedure.IProcedureManager>;
 
@@ -103,6 +104,7 @@ namespace StarForce
         private void OnLoadSceneSuccess(object sender, GameEventArgs e)
         {
             LoadSceneSuccessEventArgs ne = (LoadSceneSuccessEventArgs)e;
+            Debug.Log(sender);
             if (ne.UserData != this)
             {
                 return;

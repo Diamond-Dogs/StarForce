@@ -6,6 +6,8 @@
 //------------------------------------------------------------
 
 using System.Collections.Generic;
+using GameFramework;
+using UnityEngine;
 using UnityGameFramework.Runtime;
 using ProcedureOwner = GameFramework.Fsm.IFsm<GameFramework.Procedure.IProcedureManager>;
 
@@ -51,6 +53,8 @@ namespace StarForce
         {
             base.OnEnter(procedureOwner);
 
+            var json = Utility.Json.ToJson("000");
+            Log.Debug(json);
             m_GotoMenu = false;
             GameMode gameMode = (GameMode)procedureOwner.GetData<VarByte>("GameMode").Value;
             m_CurrentGame = m_Games[gameMode];
